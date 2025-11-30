@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import rateLimit from 'express-rate-limit';
@@ -31,9 +32,10 @@ app.set('etag',WEB_CACHE)
 
 // Database Connect
 mongoose.connect(DATABASE,{autoIndex:true}).then(()=>{
-    console.log("MongoDB connected");
-}).catch(()=>{
-    console.log("MongoDB disconnected");
+    console.log("MongoDB connected successfully");
+}).catch((err)=>{
+    console.error("MongoDB connection failed:", err.message);
+    console.log("Please ensure MONGODB_URI environment variable is set correctly");
 })
 
 
