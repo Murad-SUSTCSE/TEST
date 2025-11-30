@@ -38,5 +38,3 @@ export const FAIL_URL = process.env.FAIL_URL || "";
 export const CANCEL_URL = process.env.CANCEL_URL || "";
 export const INIT_URL = process.env.INIT_URL || "";
 
-
-
